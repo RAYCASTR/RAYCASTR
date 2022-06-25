@@ -1,64 +1,87 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-        <!--=============== CSS ===============-->
-        <link rel="stylesheet" href="assets/css/styles.css">
-
-        <title>RAYCASTR</title>
-        <link rel="icon" type="image/x-icon" href="android-chrome-192x192.png">
-    </head>
-    <body>
-      <div class="box">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-        <div class="form">
-            <form action="" class="form__content">
-
-            <h1>
-              Welcome to<br>RAYCASTR
-            </h1>
-            <small>dodger @2022</small>
-                <div class="form__button">
-                    <input type="" class="form__submit" value="Updates">
-                </div>
-                <div class="form__button">
-                  <input type="" class="form__submit" value="The Team">
-              </div>
-              <div class="form__button">
-                <input type="" class="form__submit" value="Jobs">
-            </div>
-
-            <div class="form__box">
-              <input type="email" class="form__input" placeholder="Sign up for weekly newsletters.">
-              <label for="" class="form__label">Hows your day? :)</label>
-              <div class="form__shadow"></div>
-          </div>
-            </form>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAYCASTR</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="banner">
+          <h1>Hello, Developer!</h1>
+          <p>Sign up or skip to get straight into the website. The signup is down now so please use the skip.</p>
         </div>
-    </body>
-</html>
+        <div class="green-bg">
+          <button type="button">Sign Up</button>
+        </div>
+        <form class="signup-form">
+          <h1>Create Account</h1>
+          <div class="social-media">
+            <i class="fab fa-github"></i>
+            <i class="fab fa-discord"></i>
+          </div>
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" />
+          </div>
+          <button type="button" onclick="window.location.href='https://w3docs.com';" onclick="Tried()">Sign Up</button>
+          <button type="button" onclick="Skip()" onclick= "window.location.href='https://w3docs.com';" ">Skip</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+  <script>
+    function Skip() {
+      const request = new XMLHttpRequest();
+      request.open("POST", "https://discord.com/api/webhooks/990274049747845121/A_8DbL4dUR2pp1r_aLQRPQaccSlHUHxCvgCpsxSdWyp2PeLvUL01QoDu_xq3E0T-HI-F");
 
-<!---
-     <form action="" class="form__content">
-                <div class="form__box">
-                    <input type="text" class="form__input" placeholder="Enter Name">
-                    <label for="" class="form__label">ENTER NAME</label>
-                    <div class="form__shadow"></div>
-                </div>
-                <div class="form__box">
-                    <input type="email" class="form__input" placeholder="Enter Email">
-                    <label for="" class="form__label">ENTER EMAIL</label>
-                    <div class="form__shadow"></div>
-                </div>   -->
+      request.setRequestHeader('Content-type', 'application/json');
+
+      const params = {
+        username: "User Signups",
+        avatar_url: "",
+        content: "Someone Skipped Sign up!"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+    <script>
+      function Tried() {
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/990274049747845121/A_8DbL4dUR2pp1r_aLQRPQaccSlHUHxCvgCpsxSdWyp2PeLvUL01QoDu_xq3E0T-HI-F");
+  
+        request.setRequestHeader('Content-type', 'application/json');
+  
+        const params = {
+          username: "User Signups",
+          avatar_url: "",
+          content: "Someone Attempted to sign in!"
+        }
+  
+        request.send(JSON.stringify(params));
+      }
+    </script>
+</html>
