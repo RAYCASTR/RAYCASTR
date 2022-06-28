@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      /*function check(e)
+      {
+      alert(e.keyCode);
+      }*/
+      document.onkeydown = function(e) {
+              if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {//Alt+c, Alt+v will also be disabled sadly.
+              }
+              return false;
+      };
+      </script>
+  <link rel="icon" type="image/x-icon" href="Screenshot 2021-07-27 123415.png">
+
+  </head>
+  <body oncontextmenu="return false;">
+</head>
+<body>
+    <br><br><br><br><br><br><br><br><br><br>
+    <center>
+        <h1>
+            Looks like we have hit a..<br>Roadblock?
+        </h1>
+        <button type="button" onclick="Submit()">Submit this data to RAYCASTR developers.</button>
+        <br>
+        <br>
+        <button type="button" onclick="window.location.href='index.html';">Go back home</button>
+
+    </center>
+    
+</body>
+<script>
+    function Submit() {
+            const request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/991171158995128390/6BjHi3ff--tCGWOEILKMjhkPQ_ODj58DaN9ow0PW5qRQ0NXm06THeBJ4gK_39c6MzGai");
+      
+            request.setRequestHeader('Content-type', 'application/json');
+      
+            const params = {
+              username: "error-submitted",
+              avatar_url: "",
+              content: "someone had a 404 on sign up <@383735130767753227>"
+            }
+      
+            request.send(JSON.stringify(params));
+          }    </script>
+</html>
